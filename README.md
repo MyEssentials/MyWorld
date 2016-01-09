@@ -2,6 +2,8 @@ MyWorld
 =======
 World Protection System
 
+[![Build Status](http://img.shields.io/travis/MyEssentials/MyWorld.svg)](https://travis-ci.org/MyEssentials/MyWorld)
+
 Features
 ========
 * Ability to protect entire worlds based on permissions
