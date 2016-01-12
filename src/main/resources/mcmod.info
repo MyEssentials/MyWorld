@@ -1,0 +1,16 @@
+[
+{
+  "modid": "MyWorld",
+  "name": "MyWorld",
+  "description": "",
+  "version": "${mod_version}",
+  "mcversion": "${minecraft_version}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [
+    "Legobear154",
+    "AfterWind"
+  ],
+  "credits": "Legobear154 and AfterWind"
+}
+]
