@@ -1,9 +1,9 @@
 package myworld.api;
 
+import myessentials.utils.ItemUtils;
 import mypermissions.permission.api.proxy.PermissionProxy;
-import myworld.api.util.BlockUtil;
-import myworld.api.util.EntityUtil;
-import myworld.api.util.ItemUtil;
+import myessentials.utils.BlockUtils;
+import myessentials.utils.EntityUtils;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
@@ -51,11 +51,11 @@ public abstract class BaseHandler {
         }
 
         if (obj instanceof Entity) {
-            return EntityUtil.getEntityPermission((Entity) obj);
+            return EntityUtils.getEntityPermission((Entity) obj);
         } else if (obj instanceof ItemStack) {
-            return ItemUtil.getItemPermission((ItemStack) obj);
+            return ItemUtils.nameFromItemStack((ItemStack) obj).replace(":", ".");
         } else if (obj instanceof Block) {
-            return BlockUtil.getBlockName((Block) obj);
+            return BlockUtils.getBlockName((Block) obj);
         } else if (obj instanceof IInventory) {
             return ((IInventory) obj).getInventoryName();
         } else if (obj instanceof DamageSource) {
