@@ -6,7 +6,8 @@ import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartedEvent;
 import cpw.mods.fml.common.event.FMLServerStoppingEvent;
-import myessentials.Localization;
+import myessentials.localization.api.Local;
+import myessentials.localization.api.LocalManager;
 import myworld.subsystem.Protections;
 import org.apache.logging.log4j.Logger;
 
@@ -16,7 +17,6 @@ public class MyWorld {
     public static MyWorld instance;
 
     public Logger LOG;
-    public Localization LOCAL;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent ev) {
@@ -30,7 +30,7 @@ public class MyWorld {
         Config.instance.init(Constants.CONFIG_FOLDER + "/MyWorld.cfg", Constants.MOD_ID);
 
         // Init Localization
-        LOCAL = new Localization(Constants.CONFIG_FOLDER+"/localization/", Config.instance.localization.get(), "/mytown/localization/", MyWorld.class);
+        LocalManager.register(new Local(Constants.CONFIG_FOLDER+"/localization/", Config.instance.localization.get(), "/myworld/localization/", MyWorld.class), "myworld");
     }
 
     @EventHandler

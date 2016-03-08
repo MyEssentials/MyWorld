@@ -2,6 +2,7 @@ package myworld.handlers;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
+import myessentials.localization.api.LocalManager;
 import myessentials.utils.PlayerUtils;
 import myworld.MyWorld;
 import net.minecraft.block.Block;
@@ -25,7 +26,7 @@ public class PlayerHandler extends AbstractHandler {
         EntityPlayerMP pl = (EntityPlayerMP) ev.player;
 
         if (!checkPermission(pl, "player.login") || (pl.dimension == 0 && !checkPermission(pl, "world.enter", 0))) {
-            pl.playerNetServerHandler.kickPlayerFromServer(MyWorld.instance.LOCAL.getLocalization(BASE_PERMISSION + ".player.login"));
+            pl.playerNetServerHandler.kickPlayerFromServer(LocalManager.get(BASE_PERMISSION + ".player.login").getUnformattedText());
             return;
         }
 

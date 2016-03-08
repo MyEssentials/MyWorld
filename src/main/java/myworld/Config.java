@@ -1,7 +1,8 @@
 package myworld;
 
-import myessentials.config.ConfigProperty;
-import myessentials.config.ConfigTemplate;
+
+import myessentials.config.api.ConfigProperty;
+import myessentials.config.api.ConfigTemplate;
 
 public class Config extends ConfigTemplate {
     private static final String[] defaultEnabledProtHandlers = {"*"};
@@ -20,10 +21,14 @@ public class Config extends ConfigTemplate {
             defaultEnabledProtHandlers);
 
     public boolean isProtHandlerEnabled(String name) {
-        if (enabledProtHandlers.get()[0] == "*") return true;
+        if (enabledProtHandlers.get()[0].equals("*")) {
+            return true;
+        }
 
         for (String n : enabledProtHandlers.get()) {
-            if (n == name) return true;
+            if (n.equals(name)) {
+                return true;
+            }
         }
 
         return false;

@@ -1,6 +1,6 @@
 package myworld.api;
 
-import mypermissions.proxies.PermissionProxy;
+import mypermissions.permission.api.proxy.PermissionProxy;
 import myworld.api.util.BlockUtil;
 import myworld.api.util.EntityUtil;
 import myworld.api.util.ItemUtil;
